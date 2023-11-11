@@ -1,3 +1,25 @@
+.postForm{
+    margin: 16px;
+}
+
+.postButton{
+    height: 1rem;
+    width: 7rem;
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    margin: 32px 16px 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8px;
+    align-items: center;
+    
+}
+
+.buttonText{
+    color:rgb(59, 59, 59);
+    padding: 16px 0;
+}
 
 #myPhoto{
     height: 6rem;
@@ -40,7 +62,6 @@
     border-radius: 0.3rem;
     margin: 16px;
 }
-
 
 
 @media only screen and (max-width: 430px) {

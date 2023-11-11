@@ -2,7 +2,6 @@
 .projectName{
     color:rgb(59, 59, 59);
     padding: 16px 0;
-
 }
 
 .projectsShowcase{
@@ -32,7 +31,16 @@
 }
 
 .postButton{
-    color:rgb(59, 59, 59);
+    height: 1rem;
+    width: 7rem;
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    margin: 32px 16px 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8px;
+    align-items: center;
 }
 
 

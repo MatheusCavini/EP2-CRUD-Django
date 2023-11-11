@@ -7,32 +7,32 @@
 {% endblock style %}
 
 {% block content %}
-<h2>Postar um novo projeto</h2>
+<h2>Editar o projeto:  {{post.title}}</h2>
 
 <div class="postForm">
-<form method="POST" action="{% url 'posts:create' %}">
+<form method="POST" action="{% url 'posts:update' post.id %}">
     {% csrf_token %}
     <p>
       <label for="id_name">Título:</label>
-      <input type="text" name="name" id="id_name" />
+      <input type="text" name="name" id="id_name" value="{{post.title}}" />
     </p>
     <p>
       <label for="id_first_text">Primeiro bloco de texto:</label>
-      <input type="text" name="first_text" id="id_first_text" />
+      <input type="text" name="first_text" id="id_first_text" value="{{post.text1}}"/>
     </p>
     <p>
         <label for="id_first_img">Link da primeira imagem:</label>
-        <input type="text" name="first_img" id="id_first_img" />
+        <input type="text" name="first_img" id="id_first_img" value="{{post.thumb}}"/>
     </p>
     <p>
         <label for="id_second_text">Segundo bloco de texto:</label>
-        <input type="text" name="second_text" id="id_second_text" />
+        <input type="text" name="second_text" id="id_second_text" value="{{post.text2}}"/>
     </p>
     <p>
         <label for="id_second_img">Link da segunda imagem:</label>
-        <input type="text" name="second_img" id="id_second_img" />
+        <input type="text" name="second_img" id="id_second_img" value="{{post.img2}}"/>
     </p>
-    <button class="postButton" type="submit">Criar</button>
+    <button class="postButton" type="submit">Editar</button>
   </form>
 </div>
   
