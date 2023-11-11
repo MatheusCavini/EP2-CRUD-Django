@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+{% endblock style %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<div>
+    <img src="{% static '/images/Lightsaber_Home.png' %}" width="100%" />
+    <h1 id="HomeTitle">Bem-vindo ao meu portfólio!</h1>
+</div class="HomeContent">
+<h2 id="HomeSubtitle">Conheça meus projetos como artista amador no software Blender</h2>
+<section class="HomeSection" >
+    <img src="{% static '/images/sorvete_Home.png' %}" class="HomeImg"/>
+    <p class="HomeText">Aprendi a utilizar o Blender seguindo tutoriais no YouTube. Conforme fui ganhando prática, comecei a tentar algumas experimentações por conta própria.  </p>
+</section>
+<section class="HomeSection" >
+    <p class="HomeText">Inspirados principalmente em filmes e séries, meus projetos tem enfoque em modelagem e texturização. Gosto de produzir renders finais que saltem aos olhos. </p>
+    <img src="{% static '/images/Arc_reactor_Home.png' %}" class="HomeImg"/>
+</section>
+<section class="HomeSection" >
+    <img src="{% static '/images/abb_Home.png' %}" class="HomeImg"/>
+    <p class="HomeText">Às vezes também me sobra um tempo para mistrurar meu hobby com minha graduação... </p>
+</section><section class="HomeSection" >
+    <p class="HomeText">... ou com minha banda favorita. </p>
+    <img src="{% static '/images/TOP_Home.png' %}" class="HomeImg"/>
+</section>
+<h2 id="HomeFoot">Visite a aba "Projetos" para conhecer mais</h2>
+{% endblock content %}

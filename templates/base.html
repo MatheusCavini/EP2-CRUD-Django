@@ -1,0 +1,52 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    {% block style %}{%endblock style %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <header>
+        <div id="title"><img src="{% static '/images/logo.png' %}" height="80">
+            <h1>Portfólio Blender - Matheus Cavini</h1>
+            <nav>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'index' %}">Sobre mim</a></li>
+                <li><a href="{% url 'index' %}">Projetos</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <ul id="contactsMedia">
+            <li class="mediaItem"><img src="{% static '/images/email.png' %}" height="28px"/><p class="media">matheuslcavini@usp.br</p></li>
+            <li class="mediaItem"><img src="{% static '/images/ig.png' %}" height="28px"/><p class="media">@matheus_cavini</p></li>
+            <li class="mediaItem"><img src="{% static '/images/fb.png' %}" height="28px"/><p class="media">Matheus Cavini</p></li>
+    
+        </ul>
+        <p id="Copyright">Copyright 2023 -  Matheus Cavini</p>
+    </footer>
+
+</body>
+</html>
