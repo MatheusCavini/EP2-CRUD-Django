@@ -1,0 +1,54 @@
+
+.projectName{
+    color:rgb(59, 59, 59);
+    padding: 16px 0;
+
+}
+
+.projectsShowcase{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 16px;
+}
+
+.projectCard{
+    height: 6rem;
+    width: 5.5rem;
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    margin: 32px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 16px;
+    align-items: center;
+}
+
+.projectImage{
+   width: 5rem;
+   border-radius: 0.3rem;
+}
+
+
+
+@media only screen and (max-width: 430px) {
+    
+    .projectCard{
+        height: 10rem;
+        width: 10rem;
+    }
+    .projectImage{
+        width: 9rem;
+        border-radius: 0.5rem;
+     }
+     .projectName{
+        font-size: 0.66rem;
+    
+    }
+
+}
+
+
+
