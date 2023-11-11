@@ -31,6 +31,10 @@
    border-radius: 0.3rem;
 }
 
+.postButton{
+    color:rgb(59, 59, 59);
+}
+
 
 
 @media only screen and (max-width: 430px) {

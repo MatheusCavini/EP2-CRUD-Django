@@ -9,6 +9,7 @@
 
 {% block content %}
 <h2>Projetos</h2>
+<a class="projectName" href="{% url 'posts:create' %}">Postar um novo projeto!</a>
 {% if posts_list %}
 <ul class="projectsShowcase">
     {% for post in posts_list %}

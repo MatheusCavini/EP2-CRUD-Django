@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{%block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'single.css' %}">
+{% endblock style %}
+
+{% block content %}
+<h2>Postar um novo projeto</h2>
+
+<form method="POST" action="{% url 'posts:create' %}">
+    {% csrf_token %}
+    <p>
+      <label for="id_name">Título:</label>
+      <input type="text" name="name" id="id_name" />
+    </p>
+    <p>
+      <label for="id_first_text">Primeiro bloco de texto:</label>
+      <input type="text" name="first_text" id="id_first_text" />
+    </p>
+    <p>
+        <label for="id_first_img">Link da primeira imagem:</label>
+        <input type="text" name="first_img" id="id_first_img" />
+    </p>
+    <p>
+        <label for="id_second_text">Segundo bloco de texto:</label>
+        <input type="text" name="second_text" id="id_second_text" />
+    </p>
+    <p>
+        <label for="id_second_img">Link da segunda imagem:</label>
+        <input type="text" name="second_img" id="id_second_img" />
+    </p>
+    <button type="submit">Criar</button>
+  </form>
+  
+  {% endblock content %}
