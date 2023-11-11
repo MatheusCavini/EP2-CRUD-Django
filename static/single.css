@@ -1,0 +1,69 @@
+
+#myPhoto{
+    height: 6rem;
+    border-radius: 3rem;
+    margin: 2rem;
+}
+
+.aboutMe{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#aboutMeText{
+    margin: 1rem;
+    text-align: justify;
+    color: rgb(59, 59, 59);
+   
+}
+
+.ProjectContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.ProjectText{
+    color:  rgb(114, 114, 114);
+    padding: 0 128px;
+    font-size: 0.5rem;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.ProjectImage{
+    width: 12rem;
+    border-radius: 0.3rem;
+    margin: 16px;
+}
+
+
+
+@media only screen and (max-width: 430px) {
+    
+    .aboutMe{
+        display: flex;
+        flex-direction: column;
+    }
+    .ProjectText{
+        color:  rgb(114, 114, 114);
+        padding: 0 16px;
+        font-size: 0.5rem;
+        font-weight: 200;
+        text-align: justify;
+    }
+
+    .ProjectImage{
+        width: 10rem;
+        border-radius: 0.3rem;
+        margin: 16px;
+    }
+    
+}
+
+
+

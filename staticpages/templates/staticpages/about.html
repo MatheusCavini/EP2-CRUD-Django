@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'single.css' %}">
+{% endblock style %}
+
+{% block title %}
+Sobre mim
+{% endblock title %}
+
+
+{% block content %}
+<div class="aboutMe">
+    <img id="myPhoto" src="{% static '/images/foto.jpg' %}" />
+    <p id="aboutMeText">Prazer! Meu nome é Matheus Latorre Cavini, tenho 20 anos e moro na cidade de Santo André - SP. Sou estudante de engenharia mecatrônica na Escola Politécnica da USP. Tenho como hobby o audiovisual, principalmente na área relacionada a CGI. Tive meu primeiro contato com o Blender durante a pandemia, em 2020, e desde então tenho buscado desenvolver alguns projetos nas horas vagas.</p>
+</div>
+{% endblock content %}
