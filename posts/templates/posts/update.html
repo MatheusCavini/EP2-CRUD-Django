@@ -12,26 +12,7 @@
 <div class="postForm">
 <form method="POST" action="{% url 'posts:update' post.id %}">
     {% csrf_token %}
-    <p>
-      <label for="id_name">Título:</label>
-      <input type="text" name="name" id="id_name" value="{{post.title}}" />
-    </p>
-    <p>
-      <label for="id_first_text">Primeiro bloco de texto:</label>
-      <input type="text" name="first_text" id="id_first_text" value="{{post.text1}}"/>
-    </p>
-    <p>
-        <label for="id_first_img">Link da primeira imagem:</label>
-        <input type="text" name="first_img" id="id_first_img" value="{{post.thumb}}"/>
-    </p>
-    <p>
-        <label for="id_second_text">Segundo bloco de texto:</label>
-        <input type="text" name="second_text" id="id_second_text" value="{{post.text2}}"/>
-    </p>
-    <p>
-        <label for="id_second_img">Link da segunda imagem:</label>
-        <input type="text" name="second_img" id="id_second_img" value="{{post.img2}}"/>
-    </p>
+    {{ form.as_p }}
     <button class="postButton" type="submit"><p>Salvar edição</p></button>
   </form>
 </div>
