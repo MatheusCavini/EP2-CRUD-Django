@@ -9,9 +9,10 @@
 {% block content %}
 <form action="{% url 'posts:delete' post.id %}" method="post">
   {% csrf_token %}
-  <p>
+  <h2>
     Você tem certeza que deseja apagar o projeto "{{ post.title }}"?
-  </p>
-  <button type="submit">Apagar</button>
+  </h2>
+  <p style="padding: 16px 32px;">Essa ação é definitiva e apaga todo o conteúdo do post e seus comentários.</p>
+  <button class="postButton" type="submit"><p>Apagar</p></button>
 </form>
 {% endblock content %}

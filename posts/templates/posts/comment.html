@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{%block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'single.css' %}">
+{% endblock style %}
+
+{% block content %}
+<h2>Comentar no projeto {{ post.title }} </h2>
+
+<div class="postForm">
+<form action="{% url 'posts:comment' post.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="postButton" type="submit"><p>Criar</p></button>
+</form>
+</div>
+
+<div class="postForm">
+<p><a class="buttonText" href="{% url 'posts:detail' post.id %}">Voltar para a página do projeto</a></p>
+</div>
+{% endblock content %}
