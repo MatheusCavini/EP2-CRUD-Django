@@ -8,6 +8,14 @@
 
 {% block content %}
 <h2>{{post.title}}</h2>
+{% if post.categories.all %}
+    <ul>
+    {% for category in post.categories.all%}
+    <li><a class="buttonText" href="{% url 'posts:categoryFilter' category.id  %}">{{ category.name }}</a></li>
+    
+    {% endfor%}
+    </ul>
+{%endif%}
 <div style="display: flex; flex-direction: row;">
 <div class="postButton">
     <a class="buttonText" href="{% url 'posts:delete' post.id %}">Apagar o projeto</a>

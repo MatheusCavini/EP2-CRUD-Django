@@ -10,7 +10,8 @@ class PostForm(ModelForm):
             'text1',
             'thumb',
             'text2',
-            'img2'
+            'img2',
+            'categories'
         ]
         labels = {
             'title':"Título",
@@ -18,6 +19,7 @@ class PostForm(ModelForm):
             'thumb':"Link da primeira imagem:",
             'text2':"Segundo bloco de texto:",
             'img2':"Link da segunda imagem:",
+            'categories': "Selecione uma ou mais categorias:"
         }
 
         widgets = {

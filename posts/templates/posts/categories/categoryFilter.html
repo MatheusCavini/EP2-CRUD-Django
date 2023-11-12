@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+{% endblock style %}
+
+{% block content %}
+<h2>Projetos da categoria "{{category.name}}"</h2>
+
+
+{% if category.post_set.all %}
+<ul class="projectsShowcase">
+    {% for post in category.post_set.all %}
+        <li><div class="projectCard">
+            <img class="projectImage" src={{post.thumb}}>
+            <a class="projectName" href="{% url 'posts:detail' post.id  %}">{{ post.title }}</a>
+        </div></li>
+    {% endfor %}
+    
+</ul>
+{% else %}<p style="margin: 64px;">Nenhum projeto dessa categoria encontrado no sistema.</p>
+{% endif %}
+
+
+{% endblock content %}
