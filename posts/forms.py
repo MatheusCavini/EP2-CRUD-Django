@@ -22,9 +22,12 @@ class PostForm(ModelForm):
             'categories': "Selecione uma ou mais categorias:"
         }
 
+        
+
         widgets = {
             'text1': forms.Textarea(attrs={'rows': 4, 'cols': 50}), 
-            'text2': forms.Textarea(attrs={'rows': 4, 'cols': 50}),  
+            'text2': forms.Textarea(attrs={'rows': 4, 'cols': 50}),
+            'categories':  forms.CheckboxSelectMultiple()
         }
 
 class CommentForm(ModelForm):

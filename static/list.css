@@ -8,7 +8,7 @@
 .projectsShowcase{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
     padding: 16px;
 }
@@ -18,7 +18,7 @@
     width: 5.5rem;
     background-color: rgb(233, 233, 233);
     border-radius: 0.5rem;
-    margin: 32px 6px;
+    margin: 32px 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
