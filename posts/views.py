@@ -33,8 +33,8 @@ class PostCreateView(generic.CreateView):
         post.text1 = post_text1
         post.text2 = post_text2
         post.img2 = post_image
-        post.categories.set(form.cleaned_data['categories'])
         post.save()
+        post.categories.set(form.cleaned_data['categories'])
 
         return HttpResponseRedirect(reverse('posts:detail', args=(post.id,)))
 
