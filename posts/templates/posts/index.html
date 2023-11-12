@@ -13,9 +13,9 @@
     <a class="projectName" href="{% url 'posts:create' %}">     + Postar um novo projeto!</a>
 </div>
 
-{% if posts_list %}
+{% if post_list %}
 <ul class="projectsShowcase">
-    {% for post in posts_list %}
+    {% for post in post_list %}
         <li><div class="projectCard">
             <img class="projectImage" src={{post.thumb}}>
             <a class="projectName" href="{% url 'posts:detail' post.id  %}">{{ post.title }}</a>
