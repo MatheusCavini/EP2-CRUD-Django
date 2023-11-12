@@ -11,6 +11,16 @@ class Post(models.Model):
     img2 = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        return f'{self.Title} ({self.date})'
+        return f'{self.title} ({self.date})'
+    
+class Comment(models.Model):
+    date = models.DateTimeField()
+    text = models.CharField(max_length=1000)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+
+    project = models.ForeignKey(Post, on_delete=models.CASCADE)
 
 # Create your models here.
