@@ -1,6 +1,13 @@
 from django.db import models
 from django.conf import settings
 
+class Category(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.CharField(max_length=10000)
@@ -9,6 +16,7 @@ class Post(models.Model):
     text1 = models.CharField(max_length=1000, blank=True)
     text2 = models.CharField(max_length=1000, blank=True)
     img2 = models.CharField(max_length=255, blank=True)
+    categories = models.ManyToManyField(Category)
 
     def __str__(self):
         return f'{self.title} ({self.date})'
@@ -23,4 +31,3 @@ class Comment(models.Model):
 
     project = models.ForeignKey(Post, on_delete=models.CASCADE)
 
-# Create your models here.

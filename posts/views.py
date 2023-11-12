@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .forms import CommentForm, PostForm
@@ -33,6 +33,7 @@ class PostCreateView(generic.CreateView):
         post.text1 = post_text1
         post.text2 = post_text2
         post.img2 = post_image
+        post.categories.set(form.cleaned_data['categories'])
         post.save()
 
         return HttpResponseRedirect(reverse('posts:detail', args=(post.id,)))
@@ -62,6 +63,7 @@ class PostUpdateView(generic.UpdateView):
         post.text1 = post_text1
         post.text2 = post_text2
         post.img2 = post_image
+        post.categories.set(form.cleaned_data['categories'])
         post.save()
         return HttpResponseRedirect(
                 reverse('posts:detail', args=(post.id, )))
@@ -89,3 +91,12 @@ def create_comment(request, post_id):
         form = CommentForm()
     context = {'form': form, 'post':post}
     return render(request, 'posts/comment.html', context)
+
+
+class CategoryListView(generic.ListView):
+    model = Category
+    template_name = 'posts/categories/categories.html'
+
+class CategoryFilterView(generic.DetailView):
+    model = Category
+    template_name = 'posts/categories/categoryFilter.html'

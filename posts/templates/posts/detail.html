@@ -8,12 +8,22 @@
 
 {% block content %}
 <h2>{{post.title}}</h2>
+{% if post.categories.all %}
+    <ul style="display: flex; justify-content: left; align-items: center;">
+    <li><p style="margin-left:64px; font-size: 22px;">Categorias:</p></li>
+    {% for category in post.categories.all%}
+    <li class="postButton" style="width: 4rem; height: 0.5rem; margin: 8px 16px;">
+        <a style="font-size: 18px;" class="buttonText" href="{% url 'posts:categoryFilter' category.id  %}">{{ category.name }}</a></li>
+    
+    {% endfor%}
+    </ul>
+{%endif%}
 <div style="display: flex; flex-direction: row;">
 <div class="postButton">
-    <a class="buttonText" href="{% url 'posts:delete' post.id %}">Apagar o projeto</a>
+    <a class="buttonText" href="{% url 'posts:delete' post.id %}">🗑️ Apagar o projeto</a>
 </div>
 <div class="postButton">
-    <a class="buttonText" href="{% url 'posts:update' post.id %}">Editar o projeto</a>
+    <a class="buttonText" href="{% url 'posts:update' post.id %}">✏️ Editar o projeto</a>
 </div>
 </div>
 
@@ -22,7 +32,7 @@
 
 <h2>Comentários</h2>
 <div class="postButton">
-    <a class="buttonText" href="{% url 'posts:comment' post.pk %}">+ Comentar</a>
+    <a class="buttonText" href="{% url 'posts:comment' post.pk %}">💬 Comentar</a>
 </div>
 <ul style="display: flex; flex-direction: column; padding: 0 80px;">
     {% if post.comment_set.all %}

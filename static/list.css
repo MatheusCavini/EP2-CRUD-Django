@@ -4,6 +4,7 @@
     padding: 16px 0;
 }
 
+
 .projectsShowcase{
     display: flex;
     flex-direction: row;
@@ -42,6 +43,8 @@
     padding: 8px;
     align-items: center;
 }
+
+
 
 
 

@@ -8,14 +8,12 @@
 {% endblock style %}
 
 {% block content %}
-<h2>Projetos</h2>
-<div class="postButton">
-    <a class="projectName" href="{% url 'posts:create' %}">     ➕ Postar um novo projeto!</a>
-</div>
+<h2>Projetos da categoria "{{category.name}}"</h2>
 
-{% if post_list %}
+
+{% if category.post_set.all %}
 <ul class="projectsShowcase">
-    {% for post in post_list %}
+    {% for post in category.post_set.all %}
         <li><div class="projectCard">
             <img class="projectImage" src={{post.thumb}}>
             <a class="projectName" href="{% url 'posts:detail' post.id  %}">{{ post.title }}</a>
@@ -23,7 +21,7 @@
     {% endfor %}
     
 </ul>
-{% else %}<p>Nenhum projeto foi encontrado no sistema.</p>
+{% else %}<p style="margin: 64px;">Nenhum projeto dessa categoria encontrado no sistema.</p>
 {% endif %}
 
 
