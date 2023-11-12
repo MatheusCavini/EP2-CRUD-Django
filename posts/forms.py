@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Post, Comment
+from .models import Post, Comment,Category
 from django import forms
 
 class PostForm(ModelForm):
@@ -24,8 +24,7 @@ class PostForm(ModelForm):
 
         widgets = {
             'text1': forms.Textarea(attrs={'rows': 4, 'cols': 50}), 
-            'text2': forms.Textarea(attrs={'rows': 4, 'cols': 50}) 
-            
+            'text2': forms.Textarea(attrs={'rows': 4, 'cols': 50}),  
         }
 
 class CommentForm(ModelForm):

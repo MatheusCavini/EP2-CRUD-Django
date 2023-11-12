@@ -14,9 +14,9 @@
 {% if category_list %}
     {% for category in category_list %}
         <li>
-        <div style="background-color: rgb(233, 233, 233); margin: 32px;padding: 0px; border-radius: 0.5rem;">
+        <div style="background-color: rgb(233, 233, 233); margin: 32px;padding-bottom: 8px; border-radius: 0.5rem;">
             <a style="margin: 32px;" class="projectName" href="{% url 'posts:categoryFilter' category.id  %}">{{ category.name }}</a>
-            <p style="margin-left: 64px;">{{category.description}}</p>
+            <p style="margin-left: 64px; margin-bottom: 16px;">{{category.description}}</p>
         </div>
         </li>
     {% endfor %}
