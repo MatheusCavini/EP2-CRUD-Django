@@ -9,11 +9,15 @@
 {% block content %}
 <h2>Comentar no projeto {{ post.title }} </h2>
 
+<div class="postForm">
 <form action="{% url 'posts:comment' post.id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Comentar</button>
+    <button class="postButton" type="submit"><p>Criar</p></button>
 </form>
+</div>
 
-<p><a href="{% url 'posts:detail' post.id %}">Voltar para a página do projeto</a></p>
+<div class="postForm">
+<p><a class="buttonText" href="{% url 'posts:detail' post.id %}">Voltar para a página do projeto</a></p>
+</div>
 {% endblock content %}

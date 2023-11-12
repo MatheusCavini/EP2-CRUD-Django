@@ -21,15 +21,17 @@
 {{post.content|safe}}
 
 <h2>Comentários</h2>
-<a href="{% url 'posts:comment' post.pk %}"><button>Comente</button></a>
+<div class="postButton">
+    <a class="buttonText" href="{% url 'posts:comment' post.pk %}">+ Comentar</a>
+</div>
 <ul style="display: flex; flex-direction: column; padding: 0 80px;">
     {% if post.comment_set.all %}
-        {% for comment in post.comment_set.all %}
+        {% for comment in post.comment_set.all|dictsortreversed:"date" %}
             <div style="padding: 16px;">
                 <p>
                     "{{ comment.text }}"
                 </p>
-                <p style="padding: 0 16px;">—{{ comment.author }}  -  {{comment.date|date:"d/m/Y, H:i"}}</p>
+                <p style="padding: 0 16px; color: rgb(121, 121, 121);">—{{ comment.author }}  -  {{comment.date|date:"d/m/Y, H:i"}}</p>
             </div>
         {% endfor %}
     {% else %}
